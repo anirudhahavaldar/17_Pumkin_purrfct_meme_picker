@@ -27,7 +27,7 @@ function closeModal() {
 
 function renderCat() {
   const catObject = getSingleCatObject()
-  console.log(catObject)
+
   memeModalInner.innerHTML = `
   <img 
     class="cat-img"
@@ -39,7 +39,7 @@ function renderCat() {
 
 function getSingleCatObject() {
   const catArray = getMatchingCatArray()
-  console.log(catArray)
+
   if (catArray.length === 1) return catArray[0]
   else return catArray[Math.floor(Math.random() * catArray.length)]
 }
@@ -50,7 +50,6 @@ function getMatchingCatArray() {
       'input[type=radio]:checked'
     ).value
     const isGif = gifsOnlyOption.checked
-    console.log(isGif)
 
     const matchingArray = catsData.filter(function (cat) {
       if (isGif) return cat.emotionTags.includes(selectedEmotion) && cat.isGif
